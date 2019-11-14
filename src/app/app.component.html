@@ -1,0 +1,29 @@
+  <button (click)="addNewCompany()">Add new Company</button><br><br>
+  <form [formGroup]="myForm">
+    <div formArrayName="companies">
+      <div *ngFor="let comp of myForm.get('companies').controls; let i=index">
+      <fieldset>
+        <legend><h3>COMPANY {{i+1}}: </h3></legend>
+        <div [formGroupName]="i">
+          <label>Company Name: </label>
+          <input formControlName="company" /><span><button (click)="deleteCompany(i)">Delete Company</button></span>
+          <div formArrayName="projects">
+            <div *ngFor="let project of comp.get('projects').controls; let j=index">
+              <fieldset>
+              <legend><h4>PROJECT {{j+1}}</h4></legend>
+              <div [formGroupName]="j">
+                <label>Project Name:</label>
+                <input formControlName="projectName" /><span><button (click)="deleteProject(comp.controls.projects, j)">Delete Project</button></span>
+              </div>
+              </fieldset>
+            </div>
+            <button (click)="addNewProject(comp.controls.projects)">Add new Project</button>
+          </div>
+        </div>
+      </fieldset>
+      </div>
+    </div><br>
+    
+  </form>
+
+  <pre>{{myForm.value | json}}</pre>
