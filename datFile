@@ -1,12 +1,1 @@
-{
-    companies: [
-      {
-        company: "example comany",
-        projects: [
-          {
-            projectName: "example project",
-          }
-        ]
-      }
-    ]
-}
+{"companies":[{"company":"example comany","projects":[{"projectName":"example project"}]}]}
