@@ -1,0 +1,12 @@
+data =  {
+    companies: [
+      {
+        company: "example comany",
+        projects: [
+          {
+            projectName: "example project",
+          }
+        ]
+      }
+    ]
+}
